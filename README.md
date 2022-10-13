@@ -13,6 +13,6 @@ Datasets:
 	- Fuel Economy Data: How Efficient Are Today's Cars? | Kaggle
 	- Electricity Production by Source (World) | Kaggle
 	- World Energy Consumption | Kaggle
-Car sales | Kaggle![image](https://user-images.githubusercontent.com/97670702/195604636-cd292cbb-91bc-4780-aa95-4920470fe827.png)
+	- Car sales | Kaggle
 
 
