@@ -1,0 +1,2506 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.dei.unipd.it/database2/movieOntology#"
+     xml:base="http://www.dei.unipd.it/database2/movieOntology"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:countries="http://eulersharp.sourceforge.net/2003/03swap/countries#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.dei.unipd.it/movieOntology">
+        <owl:imports rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:isDefinedBy xml:lang="en">Gianmaria Silvello</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en">This is a simple ontology about movies, people working in movies and oscars.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#acted -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#acted">
+        <rdfs:subPropertyOf rdf:resource="http://www.dei.unipd.it/database2/movieOntology#worked"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#directed -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#directed">
+        <rdfs:subPropertyOf rdf:resource="http://www.dei.unipd.it/database2/movieOntology#worked"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#hasCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#hasCountry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:range rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#hasGenre">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/movieOntology#hasGenre"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Action"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Adventure"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Biography"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Comedy"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Crime"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Drama"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Family"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Fantasy"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#History"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Horror"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Musical"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Romance"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sci-Fi"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sport"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Thriller"/>
+                            <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Western"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#nominated -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#nominated">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Award"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#winner -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#winner">
+        <rdfs:subPropertyOf rdf:resource="http://www.dei.unipd.it/database2/movieOntology#nominated"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#worked -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#worked">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#alternativeTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#alternativeTitle">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#birthday -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#birthday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#birthplace -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#birthplace">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#category">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Oscar"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#deathDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#deathDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#duration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The duration in minutes of the movie. Any one Movie can only ever have one duration (functional).</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#originalTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#originalTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/database2/movieOntology#originalTitle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description xml:lang="en">The original title of the movie. It can be in any language. There must be at one and only oneoriginal title.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#releaseDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/database2/movieOntology#year">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Award"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Oscar"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country">
+        <owl:equivalentClass rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Award -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/movieOntology#Award"/>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Country -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Genre -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/movieOntology#Genre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Action"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Adventure"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Biography"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Comedy"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Drama"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Family"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Fantasy"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#History"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Horror"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Mistery"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Musical"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Noir"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Romance"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sci-Fi"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sport"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Thriller"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#War"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/database2/movieOntology#Western"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Movie -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/movieOntology#Movie">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The class of movies</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Oscar -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/database2/movieOntology#Oscar">
+        <rdfs:subClassOf rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Award"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ad -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ad">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ae -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ae">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#af -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#af">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ag -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ag">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ai -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ai">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#al -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#al">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#am -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#am">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#an -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#an">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ao -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ao">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#aq -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#aq">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ar -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ar">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#as -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#as">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#at -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#at">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#au -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#au">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#aw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#aw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ax -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ax">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#az -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#az">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ba -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ba">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bb -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bb">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bd -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bd">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#be -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#be">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bi -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bi">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bj -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bj">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bo -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bo">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#br -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#br">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bs -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bs">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#by -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#by">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#bz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#bz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ca -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ca">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cd -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cd">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ch -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ch">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ci -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ci">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ck -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ck">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#co -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#co">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cx -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cx">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cy -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#cz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#cz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#de -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#de">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#dj -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#dj">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#dk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#dk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#dm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#dm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#do -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#do">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#dz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#dz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ec -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ec">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ee -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ee">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#eg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#eg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#eh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#eh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#er -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#er">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#es -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#es">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#et -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#et">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fi -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fi">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fj -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fj">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fo -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fo">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#fr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#fr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ga -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ga">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gb -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gb">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gd -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gd">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ge -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ge">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gi -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gi">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gp -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gp">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gq -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gq">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gs -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gs">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#gy -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#gy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#hk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#hk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#hm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#hm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#hn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#hn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#hr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#hr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ht -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ht">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#hu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#hu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#id -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#id">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ie -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ie">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#il -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#il">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#im -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#im">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#in -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#in">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#io -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#io">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#iq -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#iq">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ir -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ir">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#is -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#is">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#iso3166-1-alpha-2 -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#iso3166-1-alpha-2">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#iso3166-1-alpha-3 -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#iso3166-1-alpha-3">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#it -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#it">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#je -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#je">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#jm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#jm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#jo -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#jo">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#jp -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#jp">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ke -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ke">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ki -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ki">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#km -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#km">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kp -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kp">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ky -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ky">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#kz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#kz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#la -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#la">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lb -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lb">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#li -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#li">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ls -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ls">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#lv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#lv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ly -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ly">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ma -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ma">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#md -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#md">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#me -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#me">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ml -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ml">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mo -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mo">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mp -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mp">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mq -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mq">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ms -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ms">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mx -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mx">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#my -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#my">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#mz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#mz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#na -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#na">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ne -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ne">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ng -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ng">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ni -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ni">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#no -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#no">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#np -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#np">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#nz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#nz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#om -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#om">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pa -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pa">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pe -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pe">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ph -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ph">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ps -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ps">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#pw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#pw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#py -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#py">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#qa -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#qa">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#re -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#re">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ro -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ro">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#rs -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#rs">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ru -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ru">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#rw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#rw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sa -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sa">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sb -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sb">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sd -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sd">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#se -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#se">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sh -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sh">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#si -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#si">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sj -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sj">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#so -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#so">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#st -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#st">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sy -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#sz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#sz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#td -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#td">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#th -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#th">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tj -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tj">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tk -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tk">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tl -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tl">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#to -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#to">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tr -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tr">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tv -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tv">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#tz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#tz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ua -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ua">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ug -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ug">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#um -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#um">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#us -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#us">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#uy -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#uy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#uz -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#uz">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#va -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#va">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#vc -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#vc">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ve -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ve">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#vg -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#vg">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#vi -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#vi">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#vn -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#vn">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#vu -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#vu">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#wf -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#wf">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ws -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ws">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#ye -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#ye">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#yt -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#yt">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#za -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#za">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#zm -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#zm">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eulersharp.sourceforge.net/2003/03swap/countries#zw -->
+
+    <owl:NamedIndividual rdf:about="http://eulersharp.sourceforge.net/2003/03swap/countries#zw">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Action -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Action">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Adventure -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Adventure">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Biography -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Biography">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Comedy -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Comedy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Crime">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Drama -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Drama">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Family -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Family">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Fantasy -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Fantasy">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#History -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#History">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Horror -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Horror">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Mistery -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Mistery">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Musical -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Musical">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Noir -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Noir">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Romance -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Romance">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Sci-Fi -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sci-Fi">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Sport -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Sport">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Thriller">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#War -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#War">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/database2/movieOntology#Western -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/database2/movieOntology#Western">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/database2/movieOntology#Genre"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
