@@ -1,0 +1,4 @@
+@prefix country: <http://eulersharp.sourceforge.net/2003/03swap/countries#> .
+
+country: a country:Country .
+
