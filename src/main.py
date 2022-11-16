@@ -5,6 +5,7 @@ from rdflib import Namespace
 # rdflib knows about some namespaces, like FOAF
 from rdflib.namespace import FOAF, XSD
 dataDir = 'data/'
+
 # define dataasets
 europe_dataset = dataDir + 'EnergyConsumption/EC_Europe.csv'
 dfEurope = utils.creteDataframe(europe_dataset)
@@ -23,6 +24,7 @@ if __name__=="__main__":
     print(rdf.dataframes.get('Countries'))
     # Add namespace for country codes
     rdf.addNameSpace("country", Namespace("http://www.semanticweb.org/ontologies/2021/0/country#"))
+    rdf.addNameSpace("source", Namespace("http://www.db2Project.org/ontologies/2021/0/source#"))
     rdf.addNameSpace("foaf", FOAF)
     rdf.addNameSpace("xsd", XSD)
     # Bind new namespace to graph
@@ -31,3 +33,12 @@ if __name__=="__main__":
     rdf.creteCountryNodes()
     # Print graph
     rdf.graph.print()
+    
+    ### -- Counsumption data -- ###
+    
+    rdf.addDataset(filePath='data/EnergyConsumption/world_energy.csv', name='WorldEnergy')
+    print(rdf.dataframes.get('WorldEnergy'))
+    rdf.createSourceNodes()
+    rdf.graph.print()
+    rdf.graph.serialize(destination='data/energy.ttl', format='turtle')
+    

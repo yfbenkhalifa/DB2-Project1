@@ -1,135 +1,196 @@
-@prefix : <http://www.db2poject.org/model/model.owl#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.db2poject.org/model/model.owl> .
-
-<http://www.db2poject.org/model/model.owl> rdf:type owl:Ontology .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.db2poject.org/model/model.owl#consumedBy
-:consumedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf :consumes ;
-            rdf:type owl:FunctionalProperty .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.db2poject.org/model/model.owl#"
+     xml:base="http://www.db2poject.org/model/model.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.db2poject.org/model/model.owl"/>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#consumes
-:consumes rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty ;
-          rdf:type owl:FunctionalProperty ;
-          rdfs:range :Resource .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.db2poject.org/model/model.owl#contains
-:contains rdf:type owl:ObjectProperty ;
-          owl:inverseOf :locatedIn ;
-          rdf:type owl:FunctionalProperty .
+    <!-- http://www.db2poject.org/model/model.owl#consumedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.db2poject.org/model/model.owl#consumedBy">
+        <owl:inverseOf rdf:resource="http://www.db2poject.org/model/model.owl#consumes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#locatedIn
-:locatedIn rdf:type owl:ObjectProperty ,
-                    owl:FunctionalProperty .
+    <!-- http://www.db2poject.org/model/model.owl#consumes -->
+
+    <owl:ObjectProperty rdf:about="http://www.db2poject.org/model/model.owl#consumes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.db2poject.org/model/model.owl#Resource"/>
+    </owl:ObjectProperty>
+    
 
 
-#################################################################
-#    Data properties
-#################################################################
+    <!-- http://www.db2poject.org/model/model.owl#contains -->
 
-###  http://www.db2poject.org/model/model.owl#countryCode
-:countryCode rdf:type owl:DatatypeProperty ,
-                      owl:FunctionalProperty ;
-             rdfs:domain :Country ;
-             rdfs:range xsd:string .
+    <owl:ObjectProperty rdf:about="http://www.db2poject.org/model/model.owl#contains">
+        <owl:inverseOf rdf:resource="http://www.db2poject.org/model/model.owl#locatedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#private
-:private rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Unit ;
-         rdfs:range xsd:boolean ;
-         rdfs:comment """Boolean value that specifies if the unit is a private or public property.
-[TRUE => Private, FALSE => Public]""" .
+    <!-- http://www.db2poject.org/model/model.owl#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.db2poject.org/model/model.owl#locatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#quantity
-:quantity rdf:type owl:DatatypeProperty ;
-          rdfs:range xsd:double .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.db2poject.org/model/model.owl#source
-:source rdf:type owl:DatatypeProperty ;
-        rdfs:subPropertyOf owl:topDataProperty ;
-        rdfs:domain :Resource ;
-        rdfs:range xsd:string ;
-        rdfs:comment """This property specifies the source of the resource. 
-i.e. Electricity, Petrol, Solar ecc..""" .
+    <!-- http://www.db2poject.org/model/model.owl#countryCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.db2poject.org/model/model.owl#countryCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.db2poject.org/model/model.owl#Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-#################################################################
-#    Classes
-#################################################################
+    <!-- http://www.db2poject.org/model/model.owl#private -->
 
-###  http://www.db2poject.org/model/model.owl#Continent
-:Continent rdf:type owl:Class .
-
-
-###  http://www.db2poject.org/model/model.owl#Country
-:Country rdf:type owl:Class .
-
-
-###  http://www.db2poject.org/model/model.owl#Location
-:Location rdf:type owl:Class .
+    <owl:DatatypeProperty rdf:about="http://www.db2poject.org/model/model.owl#private">
+        <rdfs:domain rdf:resource="http://www.db2poject.org/model/model.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Boolean value that specifies if the unit is a private or public property.
+[TRUE =&gt; Private, FALSE =&gt; Public]</rdfs:comment>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#Mobile
-:Mobile rdf:type owl:Class ;
-        rdfs:subClassOf :Unit .
+    <!-- http://www.db2poject.org/model/model.owl#quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.db2poject.org/model/model.owl#quantity">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#RealEstate
-:RealEstate rdf:type owl:Class ;
-            rdfs:subClassOf :Unit .
+    <!-- http://www.db2poject.org/model/model.owl#source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.db2poject.org/model/model.owl#source">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.db2poject.org/model/model.owl#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property specifies the source of the resource. 
+i.e. Electricity, Petrol, Solar ecc..</rdfs:comment>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#Resource
-:Resource rdf:type owl:Class .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.db2poject.org/model/model.owl#Unit
-:Unit rdf:type owl:Class ;
-      rdfs:comment """Identifies a property that consumes/produces resources.
-i.e. Car, Plane, House, Train Station..""" .
+    <!-- http://www.db2poject.org/model/model.owl#Continent -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Continent"/>
+    
 
 
-#################################################################
-#    Individuals
-#################################################################
+    <!-- http://www.db2poject.org/model/model.owl#Country -->
 
-###  http://www.db2poject.org/model/model.owl#Europe
-:Europe rdf:type owl:NamedIndividual ,
-                 :Continent ;
-        :contains :Italy .
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Country"/>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#Italy
-:Italy rdf:type owl:NamedIndividual ,
-                :Country .
+    <!-- http://www.db2poject.org/model/model.owl#Location -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Location"/>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#car
-:car rdf:type owl:NamedIndividual ,
-              :Mobile ;
-     :consumes :petrol ;
-     :locatedIn :Italy .
+    <!-- http://www.db2poject.org/model/model.owl#Non-Renewable -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Non-Renewable">
+        <rdfs:subClassOf rdf:resource="http://www.db2poject.org/model/model.owl#Source"/>
+    </owl:Class>
+    
 
 
-###  http://www.db2poject.org/model/model.owl#petrol
-:petrol rdf:type owl:NamedIndividual ,
-                 :Resource .
+    <!-- http://www.db2poject.org/model/model.owl#Non-Residential -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Non-Residential">
+        <rdfs:subClassOf rdf:resource="http://www.db2poject.org/model/model.owl#Unit"/>
+    </owl:Class>
+    
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    <!-- http://www.db2poject.org/model/model.owl#Renewable -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Renewable">
+        <rdfs:subClassOf rdf:resource="http://www.db2poject.org/model/model.owl#Source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.db2poject.org/model/model.owl#Residential -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Residential">
+        <rdfs:subClassOf rdf:resource="http://www.db2poject.org/model/model.owl#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.db2poject.org/model/model.owl#Resource -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Resource"/>
+    
+
+
+    <!-- http://www.db2poject.org/model/model.owl#Source -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Source"/>
+    
+
+
+    <!-- http://www.db2poject.org/model/model.owl#Unit -->
+
+    <owl:Class rdf:about="http://www.db2poject.org/model/model.owl#Unit">
+        <rdfs:comment>Identifies a property that consumes/produces resources.
+i.e. Car, Plane, House, Train Station..</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

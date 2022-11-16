@@ -32,6 +32,7 @@ class Dataset:
         
     def addDataset(self, filePath, name=''):
         df = utils.creteDataframe(filePath)
+        utils.cleanDataframe(df)
         if df is None:
             print('Error: File not found or not valid')
         else:
@@ -52,5 +53,12 @@ class Dataset:
             self.graph.add((uri, RDF.type, self.namespaces.get('country').Country))
             # Adding name attribute
             self.graph.add((uri, self.namespaces.get('country').name, rdflib.Literal(entry['official_name_en'])))
+            
+    def createSourceNodes(self):
+        for column in self.dataframes.get('WorldEnergy'):
+            sourceName = column.split('_')[0]
+            uri = rdflib.URIRef(self.namespaces['source'][sourceName])
+            # Create Node
+            self.graph.add((uri, RDF.type, self.namespaces.get('source').Renewable))
             
     

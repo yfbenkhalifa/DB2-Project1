@@ -14,6 +14,8 @@ class Utilities:
             return pandas.DataFrame(pandas.read_csv(file, header = 0))
         elif format == 'xlsx':
             return pandas.read_excel(file, engine="openpyxl")
+        elif format == 'tsv':
+            return pandas.DataFrame(pandas.read_csv(file, sep='\t', header = 0))
         else:
             return None
             
@@ -47,3 +49,9 @@ class Utilities:
                 else:
                     dataframes.__add__([df, datasrouce[1]])
         return dataframes
+    
+    @staticmethod
+    def cleanDataframe(dataframe:pandas.DataFrame):
+        dataframe.dropna(axis=1, how='all', inplace=True)
+        dataframe.dropna(axis=0, how='all', inplace=True)
+        return dataframe

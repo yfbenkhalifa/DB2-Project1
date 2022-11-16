@@ -1,0 +1,780 @@
+@prefix country: <http://www.semanticweb.org/ontologies/2021/0/country#> .
+@prefix source: <http://www.db2Project.org/ontologies/2021/0/source#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+source:biofuel a source:Renewable .
+
+source:carbon a source:Renewable .
+
+source:coal a source:Renewable .
+
+source:country a source:Renewable .
+
+source:electricity a source:Renewable .
+
+source:energy a source:Renewable .
+
+source:fossil a source:Renewable .
+
+source:gas a source:Renewable .
+
+source:gdp a source:Renewable .
+
+source:greenhouse a source:Renewable .
+
+source:hydro a source:Renewable .
+
+source:iso a source:Renewable .
+
+source:low a source:Renewable .
+
+source:net a source:Renewable .
+
+source:nuclear a source:Renewable .
+
+source:oil a source:Renewable .
+
+source:other a source:Renewable .
+
+source:per a source:Renewable .
+
+source:population a source:Renewable .
+
+source:primary a source:Renewable .
+
+source:renewables a source:Renewable .
+
+source:solar a source:Renewable .
+
+source:wind a source:Renewable .
+
+source:year a source:Renewable .
+
+country: a country:Country ;
+    country:name "Bouvet Island",
+        "British Indian Ocean Territory",
+        "Curaçao",
+        "French Southern Territories",
+        "Heard Island and McDonald Islands",
+        "Sark",
+        "Sint Maarten (Dutch part)",
+        "South Georgia and the South Sandwich Islands",
+        "South Sudan",
+        "Svalbard and Jan Mayen Islands",
+        "United States Minor Outlying Islands" .
+
+country:AFG a country:Country ;
+    country:name "Afghanistan" .
+
+country:AIA a country:Country ;
+    country:name "Anguilla" .
+
+country:ALB a country:Country ;
+    country:name "Albania" .
+
+country:ALD a country:Country ;
+    country:name "Åland Islands" .
+
+country:ALG a country:Country ;
+    country:name "Algeria" .
+
+country:AND a country:Country ;
+    country:name "Andorra" .
+
+country:ANG a country:Country ;
+    country:name "Angola" .
+
+country:ANT a country:Country ;
+    country:name "Bonaire, Sint Eustatius and Saba" .
+
+country:ARG a country:Country ;
+    country:name "Argentina" .
+
+country:ARM a country:Country ;
+    country:name "Armenia" .
+
+country:ARU a country:Country ;
+    country:name "Aruba" .
+
+country:ASA a country:Country ;
+    country:name "American Samoa" .
+
+country:ATG a country:Country ;
+    country:name "Antigua and Barbuda" .
+
+country:AUS a country:Country ;
+    country:name "Australia" .
+
+country:AUT a country:Country ;
+    country:name "Austria" .
+
+country:AZE a country:Country ;
+    country:name "Azerbaijan" .
+
+country:BAH a country:Country ;
+    country:name "Bahamas" .
+
+country:BAN a country:Country ;
+    country:name "Bangladesh" .
+
+country:BDI a country:Country ;
+    country:name "Burundi" .
+
+country:BEL a country:Country ;
+    country:name "Belgium" .
+
+country:BEN a country:Country ;
+    country:name "Benin" .
+
+country:BER a country:Country ;
+    country:name "Bermuda" .
+
+country:BFA a country:Country ;
+    country:name "Burkina Faso" .
+
+country:BHR a country:Country ;
+    country:name "Bahrain" .
+
+country:BHU a country:Country ;
+    country:name "Bhutan" .
+
+country:BIH a country:Country ;
+    country:name "Bosnia and Herzegovina" .
+
+country:BLR a country:Country ;
+    country:name "Belarus" .
+
+country:BLZ a country:Country ;
+    country:name "Belize" .
+
+country:BOL a country:Country ;
+    country:name "Bolivia (Plurinational State of)" .
+
+country:BOT a country:Country ;
+    country:name "Botswana" .
+
+country:BRA a country:Country ;
+    country:name "Brazil" .
+
+country:BRB a country:Country ;
+    country:name "Barbados" .
+
+country:BRU a country:Country ;
+    country:name "Brunei Darussalam" .
+
+country:BUL a country:Country ;
+    country:name "Bulgaria" .
+
+country:CAM a country:Country ;
+    country:name "Cambodia" .
+
+country:CAN a country:Country ;
+    country:name "Canada" .
+
+country:CAY a country:Country ;
+    country:name "Cayman Islands" .
+
+country:CCK a country:Country ;
+    country:name "Cocos (Keeling) Islands" .
+
+country:CGO a country:Country ;
+    country:name "Congo" .
+
+country:CHA a country:Country ;
+    country:name "Chad" .
+
+country:CHI a country:Country ;
+    country:name "Chile" .
+
+country:CHN a country:Country ;
+    country:name "China" .
+
+country:CIV a country:Country ;
+    country:name "Côte d'Ivoire" .
+
+country:CMR a country:Country ;
+    country:name "Cameroon" .
+
+country:COD a country:Country ;
+    country:name "Democratic Republic of the Congo" .
+
+country:COK a country:Country ;
+    country:name "Cook Islands" .
+
+country:COL a country:Country ;
+    country:name "Colombia" .
+
+country:COM a country:Country ;
+    country:name "Comoros" .
+
+country:CPV a country:Country ;
+    country:name "Cabo Verde" .
+
+country:CRC a country:Country ;
+    country:name "Costa Rica" .
+
+country:CRO a country:Country ;
+    country:name "Croatia" .
+
+country:CTA a country:Country ;
+    country:name "Central African Republic" .
+
+country:CUB a country:Country ;
+    country:name "Cuba" .
+
+country:CXR a country:Country ;
+    country:name "Christmas Island" .
+
+country:CYP a country:Country ;
+    country:name "Cyprus" .
+
+country:CZE a country:Country ;
+    country:name "Czechia" .
+
+country:DEN a country:Country ;
+    country:name "Denmark" .
+
+country:DJI a country:Country ;
+    country:name "Djibouti" .
+
+country:DMA a country:Country ;
+    country:name "Dominica" .
+
+country:DOM a country:Country ;
+    country:name "Dominican Republic" .
+
+country:ECU a country:Country ;
+    country:name "Ecuador" .
+
+country:EGY a country:Country ;
+    country:name "Egypt" .
+
+<http://www.semanticweb.org/ontologies/2021/0/country#ENG,NIR,SCO,WAL> a country:Country ;
+    country:name "United Kingdom of Great Britain and Northern Ireland" .
+
+country:EQG a country:Country ;
+    country:name "Equatorial Guinea" .
+
+country:ERI a country:Country ;
+    country:name "Eritrea" .
+
+country:ESP a country:Country ;
+    country:name "Spain" .
+
+country:EST a country:Country ;
+    country:name "Estonia" .
+
+country:ETH a country:Country ;
+    country:name "Ethiopia" .
+
+country:FIJ a country:Country ;
+    country:name "Fiji" .
+
+country:FIN a country:Country ;
+    country:name "Finland" .
+
+country:FLK a country:Country ;
+    country:name "Falkland Islands (Malvinas)" .
+
+country:FRA a country:Country ;
+    country:name "France" .
+
+country:FRO a country:Country ;
+    country:name "Faroe Islands" .
+
+country:FSM a country:Country ;
+    country:name "Micronesia (Federated States of)" .
+
+country:GAB a country:Country ;
+    country:name "Gabon" .
+
+country:GAM a country:Country ;
+    country:name "Gambia" .
+
+country:GBG a country:Country ;
+    country:name "Guernsey" .
+
+country:GBJ a country:Country ;
+    country:name "Jersey" .
+
+country:GBM a country:Country ;
+    country:name "Isle of Man" .
+
+country:GBZ a country:Country ;
+    country:name "Gibraltar" .
+
+country:GEO a country:Country ;
+    country:name "Georgia" .
+
+country:GER a country:Country ;
+    country:name "Germany" .
+
+country:GHA a country:Country ;
+    country:name "Ghana" .
+
+country:GLP a country:Country ;
+    country:name "Guadeloupe" .
+
+country:GNB a country:Country ;
+    country:name "Guinea-Bissau" .
+
+country:GRE a country:Country ;
+    country:name "Greece" .
+
+country:GRL a country:Country ;
+    country:name "Greenland" .
+
+country:GRN a country:Country ;
+    country:name "Grenada" .
+
+country:GUA a country:Country ;
+    country:name "Guatemala" .
+
+country:GUF a country:Country ;
+    country:name "French Guiana" .
+
+country:GUI a country:Country ;
+    country:name "Guinea" .
+
+country:GUM a country:Country ;
+    country:name "Guam" .
+
+country:GUY a country:Country ;
+    country:name "Guyana" .
+
+country:HAI a country:Country ;
+    country:name "Haiti" .
+
+country:HKG a country:Country ;
+    country:name "China, Hong Kong Special Administrative Region" .
+
+country:HON a country:Country ;
+    country:name "Honduras" .
+
+country:HUN a country:Country ;
+    country:name "Hungary" .
+
+country:IDN a country:Country ;
+    country:name "Indonesia" .
+
+country:IND a country:Country ;
+    country:name "India" .
+
+country:IRL a country:Country ;
+    country:name "Ireland" .
+
+country:IRN a country:Country ;
+    country:name "Iran (Islamic Republic of)" .
+
+country:IRQ a country:Country ;
+    country:name "Iraq" .
+
+country:ISL a country:Country ;
+    country:name "Iceland" .
+
+country:ISR a country:Country ;
+    country:name "Israel" .
+
+country:ITA a country:Country ;
+    country:name "Italy" .
+
+country:JAM a country:Country ;
+    country:name "Jamaica" .
+
+country:JOR a country:Country ;
+    country:name "Jordan" .
+
+country:JPN a country:Country ;
+    country:name "Japan" .
+
+country:KAZ a country:Country ;
+    country:name "Kazakhstan" .
+
+country:KEN a country:Country ;
+    country:name "Kenya" .
+
+country:KGZ a country:Country ;
+    country:name "Kyrgyzstan" .
+
+country:KIR a country:Country ;
+    country:name "Kiribati" .
+
+country:KOR a country:Country ;
+    country:name "Republic of Korea" .
+
+country:KSA a country:Country ;
+    country:name "Saudi Arabia" .
+
+country:KUW a country:Country ;
+    country:name "Kuwait" .
+
+country:LAO a country:Country ;
+    country:name "Lao People's Democratic Republic" .
+
+country:LBR a country:Country ;
+    country:name "Liberia" .
+
+country:LBY a country:Country ;
+    country:name "Libya" .
+
+country:LCA a country:Country ;
+    country:name "Saint Lucia" .
+
+country:LES a country:Country ;
+    country:name "Lesotho" .
+
+country:LIB a country:Country ;
+    country:name "Lebanon" .
+
+country:LIE a country:Country ;
+    country:name "Liechtenstein" .
+
+country:LTU a country:Country ;
+    country:name "Lithuania" .
+
+country:LUX a country:Country ;
+    country:name "Luxembourg" .
+
+country:LVA a country:Country ;
+    country:name "Latvia" .
+
+country:MAC a country:Country ;
+    country:name "China, Macao Special Administrative Region" .
+
+country:MAD a country:Country ;
+    country:name "Madagascar" .
+
+country:MAR a country:Country ;
+    country:name "Morocco" .
+
+country:MAS a country:Country ;
+    country:name "Malaysia" .
+
+country:MDA a country:Country ;
+    country:name "Republic of Moldova" .
+
+country:MDV a country:Country ;
+    country:name "Maldives" .
+
+country:MEX a country:Country ;
+    country:name "Mexico" .
+
+country:MHL a country:Country ;
+    country:name "Marshall Islands" .
+
+country:MKD a country:Country ;
+    country:name "The former Yugoslav Republic of Macedonia" .
+
+country:MLI a country:Country ;
+    country:name "Mali" .
+
+country:MLT a country:Country ;
+    country:name "Malta" .
+
+country:MNE a country:Country ;
+    country:name "Montenegro" .
+
+country:MNG a country:Country ;
+    country:name "Mongolia" .
+
+country:MON a country:Country ;
+    country:name "Monaco" .
+
+country:MOZ a country:Country ;
+    country:name "Mozambique" .
+
+country:MRI a country:Country ;
+    country:name "Mauritius" .
+
+country:MSR a country:Country ;
+    country:name "Montserrat" .
+
+country:MTN a country:Country ;
+    country:name "Mauritania" .
+
+country:MTQ a country:Country ;
+    country:name "Martinique" .
+
+country:MWI a country:Country ;
+    country:name "Malawi" .
+
+country:MYA a country:Country ;
+    country:name "Myanmar" .
+
+country:MYT a country:Country ;
+    country:name "Mayotte" .
+
+country:NAM a country:Country ;
+    country:name "Namibia" .
+
+country:NCA a country:Country ;
+    country:name "Nicaragua" .
+
+country:NCL a country:Country ;
+    country:name "New Caledonia" .
+
+country:NED a country:Country ;
+    country:name "Netherlands" .
+
+country:NEP a country:Country ;
+    country:name "Nepal" .
+
+country:NFK a country:Country ;
+    country:name "Norfolk Island" .
+
+country:NGA a country:Country ;
+    country:name "Nigeria" .
+
+country:NIG a country:Country ;
+    country:name "Niger" .
+
+country:NIU a country:Country ;
+    country:name "Niue" .
+
+country:NMI a country:Country ;
+    country:name "Northern Mariana Islands" .
+
+country:NOR a country:Country ;
+    country:name "Norway" .
+
+country:NRU a country:Country ;
+    country:name "Nauru" .
+
+country:NZL a country:Country ;
+    country:name "New Zealand" .
+
+country:OMA a country:Country ;
+    country:name "Oman" .
+
+country:PAK a country:Country ;
+    country:name "Pakistan" .
+
+country:PAN a country:Country ;
+    country:name "Panama" .
+
+country:PAR a country:Country ;
+    country:name "Paraguay" .
+
+country:PCN a country:Country ;
+    country:name "Pitcairn" .
+
+country:PER a country:Country ;
+    country:name "Peru" .
+
+country:PHI a country:Country ;
+    country:name "Philippines" .
+
+country:PLE a country:Country ;
+    country:name "State of Palestine" .
+
+country:PLW a country:Country ;
+    country:name "Palau" .
+
+country:PNG a country:Country ;
+    country:name "Papua New Guinea" .
+
+country:POL a country:Country ;
+    country:name "Poland" .
+
+country:POR a country:Country ;
+    country:name "Portugal" .
+
+country:PRK a country:Country ;
+    country:name "Democratic People's Republic of Korea" .
+
+country:PUR a country:Country ;
+    country:name "Puerto Rico" .
+
+country:QAT a country:Country ;
+    country:name "Qatar" .
+
+country:REU a country:Country ;
+    country:name "Réunion" .
+
+country:ROS a country:Country ;
+    country:name "Antarctica" .
+
+country:ROU a country:Country ;
+    country:name "Romania" .
+
+country:RSA a country:Country ;
+    country:name "South Africa" .
+
+country:RUS a country:Country ;
+    country:name "Russian Federation" .
+
+country:RWA a country:Country ;
+    country:name "Rwanda" .
+
+country:SAH a country:Country ;
+    country:name "Western Sahara" .
+
+country:SAM a country:Country ;
+    country:name "Samoa" .
+
+country:SEN a country:Country ;
+    country:name "Senegal" .
+
+country:SEY a country:Country ;
+    country:name "Seychelles" .
+
+country:SHN a country:Country ;
+    country:name "Saint Helena" .
+
+country:SIN a country:Country ;
+    country:name "Singapore" .
+
+country:SKN a country:Country ;
+    country:name "Saint Kitts and Nevis" .
+
+country:SLE a country:Country ;
+    country:name "Sierra Leone" .
+
+country:SLV a country:Country ;
+    country:name "El Salvador" .
+
+country:SMR a country:Country ;
+    country:name "San Marino" .
+
+country:SOL a country:Country ;
+    country:name "Solomon Islands" .
+
+country:SOM a country:Country ;
+    country:name "Somalia" .
+
+country:SPM a country:Country ;
+    country:name "Saint Pierre and Miquelon" .
+
+country:SRB a country:Country ;
+    country:name "Serbia" .
+
+country:SRI a country:Country ;
+    country:name "Sri Lanka" .
+
+country:STP a country:Country ;
+    country:name "Sao Tome and Principe" .
+
+country:SUD a country:Country ;
+    country:name "Sudan" .
+
+country:SUI a country:Country ;
+    country:name "Switzerland" .
+
+country:SUR a country:Country ;
+    country:name "Suriname" .
+
+country:SVK a country:Country ;
+    country:name "Slovakia" .
+
+country:SVN a country:Country ;
+    country:name "Slovenia" .
+
+country:SWE a country:Country ;
+    country:name "Sweden" .
+
+country:SWZ a country:Country ;
+    country:name "Eswatini" .
+
+country:SYR a country:Country ;
+    country:name "Syrian Arab Republic" .
+
+country:TAH a country:Country ;
+    country:name "French Polynesia" .
+
+country:TAN a country:Country ;
+    country:name "United Republic of Tanzania" .
+
+country:TCA a country:Country ;
+    country:name "Turks and Caicos Islands" .
+
+country:TGA a country:Country ;
+    country:name "Tonga" .
+
+country:THA a country:Country ;
+    country:name "Thailand" .
+
+country:TJK a country:Country ;
+    country:name "Tajikistan" .
+
+country:TKL a country:Country ;
+    country:name "Tokelau" .
+
+country:TKM a country:Country ;
+    country:name "Turkmenistan" .
+
+country:TLS a country:Country ;
+    country:name "Timor-Leste" .
+
+country:TOG a country:Country ;
+    country:name "Togo" .
+
+country:TPE a country:Country ;
+    country:name "NaN"^^xsd:double .
+
+country:TRI a country:Country ;
+    country:name "Trinidad and Tobago" .
+
+country:TUN a country:Country ;
+    country:name "Tunisia" .
+
+country:TUR a country:Country ;
+    country:name "Turkey" .
+
+country:TUV a country:Country ;
+    country:name "Tuvalu" .
+
+country:UAE a country:Country ;
+    country:name "United Arab Emirates" .
+
+country:UGA a country:Country ;
+    country:name "Uganda" .
+
+country:UKR a country:Country ;
+    country:name "Ukraine" .
+
+country:URU a country:Country ;
+    country:name "Uruguay" .
+
+country:USA a country:Country ;
+    country:name "United States of America" .
+
+country:UZB a country:Country ;
+    country:name "Uzbekistan" .
+
+country:VAN a country:Country ;
+    country:name "Vanuatu" .
+
+country:VAT a country:Country ;
+    country:name "Holy See" .
+
+country:VEN a country:Country ;
+    country:name "Venezuela (Bolivarian Republic of)" .
+
+country:VGB a country:Country ;
+    country:name "British Virgin Islands" .
+
+country:VIE a country:Country ;
+    country:name "Viet Nam" .
+
+country:VIN a country:Country ;
+    country:name "Saint Vincent and the Grenadines" .
+
+country:VIR a country:Country ;
+    country:name "United States Virgin Islands" .
+
+country:WLF a country:Country ;
+    country:name "Wallis and Futuna Islands" .
+
+country:YEM a country:Country ;
+    country:name "Yemen" .
+
+country:ZAM a country:Country ;
+    country:name "Zambia" .
+
+country:ZIM a country:Country ;
+    country:name "Zimbabwe" .
+
+<http://www.semanticweb.org/ontologies/2021/0/country# > a country:Country ;
+    country:name "Saint Barthélemy",
+        "Saint Martin (French Part)" .
+
